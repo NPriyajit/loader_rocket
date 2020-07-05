@@ -1,10 +1,12 @@
+const range = document.querySelector("#range");
+
 function main() {
   const scene = document.querySelector(".scene");
   const count = 50;
   for (let i = 0; i < count; i++) {
     const left = Math.floor(Math.random() * innerWidth);
     const duration = Math.random() * 1 + 0.2;
-    const height = Math.random() * 100;
+    const height = Math.random() * range.value;
     let star = document.createElement("i");
     star.style.left = left + "px";
     star.style.width = 1 + "px";
@@ -15,7 +17,6 @@ function main() {
 }
 
 function drag() {
-  const range = document.querySelector("#range");
   document.querySelectorAll("i").forEach((star) => {
     star.style.height = range.value + "px";
   });
